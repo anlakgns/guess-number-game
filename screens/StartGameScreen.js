@@ -19,7 +19,7 @@ const StartGameScreen = ({ onStartGame }) => {
   const [selectedNumber, setSelectedNumber] = useState(false);
 
   const numberInputHandler = (inputText) => {
-    // replacing non-numbers with empty string.
+    // validation:replacing non-numbers with empty string.
     setEnteredValue(inputText.replace(/[^0-9]/g, ''));
   };
 
@@ -60,7 +60,7 @@ const StartGameScreen = ({ onStartGame }) => {
   }
 
   return (
-    <TouchableWithoutFeedback
+    <TouchableWithoutFeedback // wrapper for closing keyboard when pressing outside.
       onPress={() => {
         Keyboard.dismiss();
       }}
